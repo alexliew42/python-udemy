@@ -49,16 +49,30 @@
 
 # print(word_dict)
 
-weather_c = {
-    "Monday": 12,
-    "Tuesday": 14,
-    "Wednesday": 15,
-    "Thursday": 14,
-    "Friday": 21,
-    "Saturday": 22,
-    "Sunday": 24,
-}
+# weather_c = {
+#     "Monday": 12,
+#     "Tuesday": 14,
+#     "Wednesday": 15,
+#     "Thursday": 14,
+#     "Friday": 21,
+#     "Saturday": 22,
+#     "Sunday": 24,
+# }
 
-weather_dict = {day[0]:(day[1] * (9/5) + 32) for day in weather_c.items()}
+# weather_dict = {day[0]:(day[1] * (9/5) + 32) for day in weather_c.items()}
 
-print(weather_dict)
+# print(weather_dict)
+
+import pandas
+
+nato_dataframe = pandas.read_csv("nato_phonetic_alphabet.csv")
+
+nato_dict = {row.letter:row.code for (index, row) in nato_dataframe.iterrows()}
+
+user_input = input("Enter a word: ")
+
+new_list = [nato_dict[letter.upper()] for letter in user_input]
+
+
+print("This is your code name: ")
+print(new_list)
