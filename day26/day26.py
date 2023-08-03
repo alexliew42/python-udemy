@@ -27,16 +27,16 @@
 
 # print(result)
 
-file1 = open('file1.txt', 'r')
-file2 = open('file2.txt', 'r')
-x1 = file1.readlines()
-x2 = file2.readlines()
+# file1 = open('file1.txt', 'r')
+# file2 = open('file2.txt', 'r')
+# x1 = file1.readlines()
+# x2 = file2.readlines()
 
-file1_list = [int(num.replace("/n", "")) for num in x1]
-file2_list = [int(num.replace("/n", "")) for num in x2]
+# file1_list = [int(num.replace("/n", "")) for num in x1]
+# file2_list = [int(num.replace("/n", "")) for num in x2]
 
-result = [number for number in file1_list if number in file2_list]
+# result = [number for number in file1_list if number in file2_list]
 
 
 
-print(result)
+# print(result)
