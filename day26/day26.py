@@ -41,10 +41,24 @@
 
 # print(result)
 
-sentence = "What is the Airspeed Velocity of an Unladen Swallow?"
+# sentence = "What is the Airspeed Velocity of an Unladen Swallow?"
 
-sentence_list = sentence.split(" ")
+# sentence_list = sentence.split(" ")
 
-word_dict = {word:len(word) for word in sentence_list}
+# word_dict = {word:len(word) for word in sentence_list}
 
-print(word_dict)
+# print(word_dict)
+
+weather_c = {
+    "Monday": 12,
+    "Tuesday": 14,
+    "Wednesday": 15,
+    "Thursday": 14,
+    "Friday": 21,
+    "Saturday": 22,
+    "Sunday": 24,
+}
+
+weather_dict = {day[0]:(day[1] * (9/5) + 32) for day in weather_c.items()}
+
+print(weather_dict)
