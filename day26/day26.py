@@ -40,3 +40,11 @@
 
 
 # print(result)
+
+sentence = "What is the Airspeed Velocity of an Unladen Swallow?"
+
+sentence_list = sentence.split(" ")
+
+word_dict = {word:len(word) for word in sentence_list}
+
+print(word_dict)
