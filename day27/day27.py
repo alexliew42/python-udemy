@@ -14,13 +14,17 @@ window = tkinter.Tk()
 window.geometry("500x500")
 
 title = tkinter.Label(text = "This is my title.")
-title.pack()
+title.grid(row = 0, column = 0)
 
 button = tkinter.Button(text = "Click Me!", command = onClickButton)
-button.pack()
+button.grid(row = 1, column = 1)
+
+new_btn = tkinter.Button(text = "no, Click me!")
+new_btn.grid(row=0, column = 3)
+
 
 user_input = tkinter.Entry(width=10)
-user_input.pack()
+user_input.grid(row=2, column=4)
 
 
 
