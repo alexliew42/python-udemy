@@ -8,7 +8,7 @@
 import tkinter
 
 def onClickButton():
-  title["text"] = "button got clicked"
+  title["text"] = user_input.get()
 
 window = tkinter.Tk()
 window.geometry("500x500")
@@ -18,6 +18,10 @@ title.pack()
 
 button = tkinter.Button(text = "Click Me!", command = onClickButton)
 button.pack()
+
+user_input = tkinter.Entry(width=10)
+user_input.pack()
+
 
 
 
