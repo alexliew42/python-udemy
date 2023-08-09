@@ -5,7 +5,7 @@ RED = "#e7305b"
 GREEN = "#9bdeac"
 YELLOW = "#f7f5dd"
 FONT_NAME = "Courier"
-WORK_MIN = 25
+WORK_MIN = 10
 SHORT_BREAK_MIN = 5
 LONG_BREAK_MIN = 20
 reps = 1
@@ -19,13 +19,13 @@ import math
 def start_timer():
   global reps
   if reps % 2 == 1:
-    count_down(WORK_MIN * 60)
+    count_down(WORK_MIN)
     timer_label.config(text="Work", fg=GREEN)
   elif reps % 2 == 0 and reps % 8 == 0:
-    count_down(LONG_BREAK_MIN * 60)
+    count_down(LONG_BREAK_MIN)
     timer_label.config(text="Break", fg=RED)
   elif reps % 2 == 0:
-    count_down(SHORT_BREAK_MIN * 60)
+    count_down(SHORT_BREAK_MIN)
     timer_label.config(text="Break", fg=PINK)
   reps += 1  
 
@@ -41,9 +41,12 @@ def count_down(count):
   canvas.itemconfig(timer_text, text=f"{count_min}:{count_sec}")
   if count > 0:
     window.after(1000, count_down, count - 1)
-  
-  if count == 0:
+  else:
     start_timer()
+    print(reps)
+    times = math.floor((reps - 2) / 2)
+    checks = "✓" * times
+    check_marks.config(text=checks)
 
 
 # ---------------------------- UI SETUP ------------------------------- #
@@ -68,7 +71,7 @@ start_button.grid(row=2, column=0)
 reset_button = Button(text="Reset", highlightthickness=0)
 reset_button.grid(row=2, column=2)
 
-check_marks = Label(text="✓", fg=GREEN, bg=YELLOW)
+check_marks = Label(fg=GREEN, bg=YELLOW)
 check_marks.grid(row=3, column=1)
 
 
